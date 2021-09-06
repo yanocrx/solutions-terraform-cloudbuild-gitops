@@ -18,7 +18,7 @@ module "cloud_run" {
   version = "~> 0.1.1"
 
   # Required variables
-  service_name           = "test1"
+  service_name           = "${var.service}"
   project_id             = "${var.project}"
   location               = "us-central1"
   image                  = "gcr.io/crx-prod-btsi/helloreact:latest"

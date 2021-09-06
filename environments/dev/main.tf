@@ -23,10 +23,8 @@ provider "google" {
 
 module "cloud_run" {
   source  = "../../modules/cloud_run"
-  service_name           = "${var.service}"
-  project_id             = "${var.project}"
-  location               = "us-central1"
-  image                  = "gcr.io/crx-prod-btsi/helloreact:latest"
+  project                = "${var.project}"
+  env			 = "${local.env}"
 }
 
 /* module "vpc" {
