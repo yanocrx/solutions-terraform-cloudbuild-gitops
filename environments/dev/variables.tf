@@ -14,4 +14,6 @@
 
 
 variable "project" {}
-variable "service_name" {}
+variable "service" {
+default = "service_name"
+}

@@ -23,7 +23,7 @@ provider "google" {
 
 module "cloud_run" {
   source  = "../../modules/cloud_run"
-  service_name           = "${local.service_name}"
+  service_name           = "${var.service}"
   project_id             = "${var.project}"
   location               = "us-central1"
   image                  = "gcr.io/crx-prod-btsi/helloreact:latest"
