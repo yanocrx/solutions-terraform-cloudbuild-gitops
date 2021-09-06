@@ -57,6 +57,8 @@ steps:
   - | 
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME
+        service_name=$(terraform import google_pubsub_subscription.default projects/crx-prod-btsi/subscriptions/gcb-pubsub-trigger)
+        sed -i s/service_name/$service_name/variables.tf
         terraform plan
       else
         for dir in environments/*/

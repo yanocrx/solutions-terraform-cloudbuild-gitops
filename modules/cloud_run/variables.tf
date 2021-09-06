@@ -15,6 +15,6 @@
 
 variable "project" {}
 variable "env" {}
-/*variable "service_name" {
-$ terraform import google_pubsub_subscription.default projects/crx-prod-btsi/subscriptions/gcb-pubsub-trigger
-}*/
+variable "service" {
+	default = "service_name"
+}
