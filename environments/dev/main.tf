@@ -21,7 +21,18 @@ provider "google" {
   project = "${var.project}"
 }
 
-module "vpc" {
+module "cloud_run" {
+  source  = "GoogleCloudPlatform/cloud-run/google"
+  version = "~> 0.1.1"
+
+  # Required variables
+  service_name           = "test"
+  project_id             = "${var.project}"
+  location               = "us-central1"
+  image                  = "gcr.io/crx-prod-btsi/helloreact:latest"
+}
+
+/* module "vpc" {
   source  = "../../modules/vpc"
   project = "${var.project}"
   env     = "${local.env}"
@@ -37,4 +48,4 @@ module "firewall" {
   source  = "../../modules/firewall"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
-}
+}*/
