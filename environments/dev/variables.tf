@@ -14,6 +14,3 @@
 
 
 variable "project" {}
-variable "service" {
-default = "service_name"
-}

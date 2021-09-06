@@ -56,9 +56,10 @@ steps:
   - '-c'
   - | 
       if [ -d "environments/$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME
+        cd modules/cloud_run
         service_name=$(terraform import google_pubsub_subscription.default projects/crx-prod-btsi/subscriptions/gcb-pubsub-trigger)
         sed -i s/service_name/$service_name/variables.tf
+        cd ../../environments/$BRANCH_NAME
         terraform plan
       else
         for dir in environments/*/
@@ -84,9 +85,10 @@ steps:
   - '-c'
   - | 
       if [ -d "environments/$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME
+        cd modules/cloud_run
         service_name=$(terraform import google_pubsub_subscription.default projects/crx-prod-btsi/subscriptions/gcb-pubsub-trigger)
         sed -i s/service_name/$service_name/variables.tf
+        cd ../../environments/$BRANCH_NAME
         terraform apply -auto-approve
       else
         echo "***************************** SKIPPING APPLYING *******************************"
