@@ -22,11 +22,8 @@ provider "google" {
 }
 
 module "cloud_run" {
-  source  = "GoogleCloudPlatform/cloud-run/google"
-  version = "~> 0.1.1"
-
-  # Required variables
-  service_name           = "test"
+  source  = "../../modules/cloud_run"
+  service_name           = "${local.service_name}"
   project_id             = "${var.project}"
   location               = "us-central1"
   image                  = "gcr.io/crx-prod-btsi/helloreact:latest"
