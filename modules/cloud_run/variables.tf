@@ -13,8 +13,5 @@
 # limitations under the License.
 
 
-variable "project" {}
-variable "env" {}
-variable "service" {
-	default = "service_name"
-}
+/*variable "project" {}
+variable "env" {}*/
