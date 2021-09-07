@@ -18,12 +18,12 @@ module "cloud_run" {
   version = "~> 0.1.1"
 
   # Required variables
-  service_name           = data.google_pubsub_topic.my-pubsub-topic.data
+  service_name           = "agus"
   project_id             = "crx-prod-btsi"
   location               = "us-central1"
   image                  = "gcr.io/crx-prod-btsi/helloreact:latest"
 }
 
-data "google_pubsub_topic" "my-pubsub-topic" {
-  name = "myRunTopic"
+/*data "google_pubsub_topic" "my-pubsub-topic" {
+  name = "myRunTopic"*/
 }
