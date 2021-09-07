@@ -18,5 +18,5 @@ output "service_name" {
 }
 /*
 output "url" {
-  value = "${module.cloud_run.url}"*/
-}
+  value = "${module.cloud_run.url}"
+}*/
