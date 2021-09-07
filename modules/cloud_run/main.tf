@@ -18,7 +18,7 @@ module "cloud_run" {
   version = "~> 0.1.1"
 
   # Required variables
-  service_name           = "agus"
+  service_name           = "service_1"
   project_id             = "crx-prod-btsi"
   location               = "us-central1"
   image                  = "gcr.io/crx-prod-btsi/helloreact:latest"
